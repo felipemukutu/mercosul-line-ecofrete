@@ -1,0 +1,34 @@
+.group {
+  min-width: 0;
+}
+
+.legend {
+  float: left;
+  width: 100%;
+  font: var(--text-component-form-label);
+  color: var(--color-text-heading);
+}
+
+.body {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-top: var(--space-8);
+}
+
+.description {
+  font: var(--text-component-form-input);
+  color: var(--color-text-heading);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-20);
+}
+
+.error {
+  font: var(--text-body-sm);
+  color: var(--color-text-danger);
+}

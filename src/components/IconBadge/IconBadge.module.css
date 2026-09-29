@@ -1,0 +1,9 @@
+.badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: var(--size-icon-48);
+  height: var(--size-icon-48);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-info);
+}

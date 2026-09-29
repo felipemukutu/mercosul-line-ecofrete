@@ -1,0 +1,208 @@
+/* ---- Card / … ---- */
+.formCard {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-32);
+  background: var(--color-bg-surface);
+  border-top: var(--border-width-1) solid var(--color-border-strong);
+  border-radius: var(--radius-4);
+}
+.gapLg {
+  gap: var(--space-32);
+}
+.gapMd {
+  gap: var(--space-24);
+}
+
+/* ---- Field Row ---- */
+.fieldRow {
+  display: grid;
+  gap: var(--space-32);
+  align-items: start;
+}
+.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ---- Stack (question + conditional fields) ---- */
+.questionStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.reveal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  animation: reveal var(--duration-medium) var(--easing-standard);
+}
+
+/* ---- Titulo ---- */
+.pageHeading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-bottom: var(--space-32);
+  border-bottom: var(--border-width-1) solid var(--color-border-default);
+}
+.pageTitle {
+  font: var(--text-heading-h1-medium);
+  color: var(--color-text-brand);
+}
+.pageDescription {
+  font: var(--text-body-lg);
+  color: var(--color-text-body);
+}
+
+/* ---- Dados da Carga ---- */
+.cargoSummary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-32);
+  padding: var(--space-32);
+  background: var(--color-bg-neutral);
+  border: var(--border-width-1) solid var(--color-border-strong);
+  border-radius: var(--radius-4);
+}
+.cargoSummaryTitle {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  min-width: 0;
+}
+.cargoSummaryLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  font: var(--text-body-md);
+  color: var(--color-text-brand);
+}
+.cargoSummaryValue {
+  font: var(--text-heading-h2);
+  color: var(--color-text-brand);
+}
+
+/* ---- Card / Outros tipos de cargas ---- */
+.optionCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+  padding: var(--space-32);
+  background: var(--color-bg-surface);
+  border-top: var(--border-width-1) solid var(--color-border-strong);
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-medium);
+  transition: background-color var(--duration-medium) var(--easing-standard);
+}
+/* Off appearance while the special-cargo card is open */
+.optionCardOff {
+  background: var(--color-bg-page);
+}
+.optionCardRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-20);
+  min-width: 0;
+}
+.optionCardTexts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.optionCardTitle {
+  font: var(--text-heading-h2);
+  color: var(--color-text-brand);
+}
+.optionCardDescription {
+  font: var(--text-body-md);
+  color: var(--color-text-body);
+}
+
+/* ---- Add Route Button ---- */
+.addRoute {
+  width: 100%;
+  padding: var(--space-16);
+  background: var(--color-bg-page);
+  border: var(--border-width-1) dashed var(--color-border-strong);
+  border-radius: var(--radius-4);
+  font: var(--text-caption);
+  color: var(--color-text-brand);
+  transition: border-color var(--duration-fast) var(--easing-standard);
+}
+.addRoute:hover {
+  border-color: var(--color-border-brand);
+}
+
+/* ---- Ecofrete row ---- */
+.ecofreteRow {
+  display: flex;
+  gap: var(--space-20);
+}
+.ecofreteFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--size-eco-frame);
+  padding-inline: var(--space-12);
+  border-radius: var(--radius-4);
+  background: var(--color-bg-eco);
+}
+.ecofreteImage {
+  width: var(--size-eco-image);
+  height: auto;
+}
+.ecofreteQuestion {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ---- Responsive (SPEC §11) ---- */
+@media (--bp-below-desktop) {
+  .four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--space-24);
+  }
+}
+
+@media (--bp-mobile) {
+  .formCard {
+    padding: var(--space-24) var(--space-16);
+  }
+  .two,
+  .four {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-24);
+  }
+  .cargoSummary {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-16);
+    padding: var(--space-20) var(--space-16);
+  }
+  .optionCard {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-24) var(--space-16);
+  }
+  .ecofreteRow {
+    flex-direction: column;
+  }
+  .ecofreteFrame {
+    padding-block: var(--space-12);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--space-4) * -1));
+  }
+}

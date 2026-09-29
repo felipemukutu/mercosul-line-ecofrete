@@ -1,0 +1,46 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+  max-width: var(--size-content-max);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+/* Upload Field / FISPQ */
+.upload {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.uploadLabel {
+  font: var(--text-component-form-label);
+  color: var(--color-text-heading);
+}
+
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.error {
+  font: var(--text-body-sm);
+  color: var(--color-text-danger);
+}
+
+/* keep the first error clear of the sticky header when scrolled into view */
+.page :global([id^='field-']) {
+  scroll-margin-top: calc(var(--size-header) + var(--space-24));
+}

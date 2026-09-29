@@ -1,0 +1,32 @@
+{
+  "name": "ml-ui-ecofrete",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b",
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "check:behavior": "node scripts/check-behavior.mjs",
+    "capture:states": "node scripts/capture-states.mjs screenshots",
+    "capture:responsive": "node scripts/capture-responsive.mjs screenshots"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.6"
+  },
+  "devDependencies": {
+    "@csstools/postcss-global-data": "^3.1.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "playwright": "^1.63.0",
+    "postcss-custom-media": "^11.0.6",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21",
+    "vite-plugin-svgr": "^4.5.0"
+  }
+}

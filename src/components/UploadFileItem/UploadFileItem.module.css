@@ -1,0 +1,73 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  min-height: var(--size-file-item);
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-bg-surface);
+  border: var(--border-width-1) solid var(--color-border-default);
+  border-radius: var(--radius-4);
+}
+
+.info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.nameRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.name {
+  font: var(--text-body-sm-medium);
+  color: var(--color-text-heading);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.size {
+  flex-shrink: 0;
+  font: var(--text-caption);
+  color: var(--color-text-secondary);
+}
+
+.progress {
+  height: var(--size-progress);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-neutral);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-accent);
+  transition: width var(--duration-fast) linear;
+}
+
+.message {
+  font: var(--text-caption);
+  color: var(--color-text-danger);
+}
+
+/* State=Error */
+.itemError {
+  border-color: var(--color-border-danger);
+}
+
+.remove {
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-4);
+  flex-shrink: 0;
+}
+.remove:hover {
+  background: var(--color-bg-page);
+}

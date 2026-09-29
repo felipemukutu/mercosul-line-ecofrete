@@ -1,0 +1,47 @@
+.icon {
+  flex-shrink: 0;
+  transition: transform var(--duration-medium) var(--easing-standard);
+}
+
+/* two-tone icons (Icon / 32 / *): accent part always color/icon/accent */
+.icon :global(.icon-accent) {
+  fill: var(--color-icon-accent);
+}
+.icon :global(.icon-accent-stroke) {
+  stroke: var(--color-icon-accent);
+}
+/* inner glyph drawn on top of a filled shape (Check Circle) */
+.icon :global(.icon-on-brand) {
+  fill: var(--color-icon-on-brand);
+}
+
+.size16 { width: var(--size-icon-16); height: var(--size-icon-16); }
+.size18 { width: var(--size-icon-18); height: var(--size-icon-18); }
+.size20 { width: var(--size-icon-20); height: var(--size-icon-20); }
+.size24 { width: var(--size-icon-24); height: var(--size-icon-24); }
+.size32 { width: var(--size-icon-32); height: var(--size-icon-32); }
+.size48 { width: var(--size-icon-48); height: var(--size-icon-48); }
+
+.tonePrimary { color: var(--color-icon-primary); }
+.toneStrong { color: var(--color-icon-strong); }
+.toneMuted { color: var(--color-icon-muted); }
+.toneAccent { color: var(--color-icon-accent); }
+.toneWarning { color: var(--color-icon-warning); }
+.toneDisabled { color: var(--color-icon-disabled); }
+.toneOnBrand { color: var(--color-icon-on-brand); }
+.toneSecondary { color: var(--color-icon-secondary); }
+.toneSuccess { color: var(--color-icon-success); }
+
+.rotate90 { transform: rotate(90deg); }
+.rotate180 { transform: rotate(180deg); }
+.rotate270 { transform: rotate(270deg); }
+
+.spin {
+  animation: spin var(--duration-spin) linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

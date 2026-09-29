@@ -1,0 +1,13 @@
+.field {
+  height: var(--size-textarea);
+}
+
+.box {
+  flex: 1 1 auto;
+  align-items: stretch;
+  padding-block: var(--space-8);
+}
+
+.control {
+  resize: none;
+}

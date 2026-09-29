@@ -1,0 +1,62 @@
+.radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding-block: var(--space-12);
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: var(--size-radio);
+  height: var(--size-radio);
+  margin: var(--space-0);
+  cursor: pointer;
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: var(--size-radio);
+  height: var(--size-radio);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-surface);
+  border: var(--border-width-1) solid var(--color-border-brand);
+  flex-shrink: 0;
+}
+
+.dot {
+  width: var(--size-radio-dot);
+  height: var(--size-radio-dot);
+  border-radius: var(--radius-full);
+  background: var(--color-icon-accent);
+  transform: scale(0);
+  transition: transform var(--duration-fast) var(--easing-standard);
+}
+
+.input:checked + .control .dot {
+  transform: scale(1);
+}
+
+.input:focus-visible + .control {
+  outline: var(--border-width-2) solid var(--color-border-focus);
+  outline-offset: var(--space-2);
+}
+
+.label {
+  font: var(--text-body-md);
+  color: var(--color-text-body);
+}
+
+/* State=Error */
+.invalid .control {
+  border-color: var(--color-border-danger);
+}
+
+/* State=Disabled */
+.disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}

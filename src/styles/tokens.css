@@ -1,0 +1,276 @@
+/*
+ * Design tokens — generated from the Figma file ML-CC (GFZ6IR7gOYRvtUgfLVSEOM).
+ * Names follow the WEB code syntax of each Figma variable
+ * (e.g. color/text/heading → --color-text-heading).
+ *
+ * This is the ONLY file allowed to contain raw values (hex, px, numbers).
+ * UI code consumes the SEMANTIC layer only; primitives exist to feed it.
+ */
+
+/* ------------------------------------------------------------------ */
+/* Breakpoints (SPEC §11). Exposed to every CSS Module via PostCSS.    */
+/* ------------------------------------------------------------------ */
+@custom-media --bp-desktop (min-width: 1280px);
+@custom-media --bp-below-desktop (max-width: 1279.98px);
+@custom-media --bp-mobile (max-width: 767.98px);
+@custom-media --reduced-motion (prefers-reduced-motion: reduce);
+/* Same breakpoint for JS (read by src/hooks/useMediaQuery.ts) */
+:root {
+  --bp-desktop-min: 1280px;
+}
+
+:root {
+  /* ================================================================ */
+  /* Primitives — collection "Primitives" (mode Value)                */
+  /* ================================================================ */
+
+  /* color */
+  --color-blue-25: #d9e4fb;
+  --color-blue-100: #4276e9;
+  --color-blue-200: #04246a;
+  --color-blue-300: #001239;
+  --color-blue-greyish: #8092b8;
+  --color-red-100: #fb493e;
+  --color-red-200: #e20101;
+  --color-red-300: #980000;
+  --color-yellow-25: #fff3e8;
+  --color-yellow-200: #e9872e;
+  --color-light-25: #f9fafb;
+  --color-light-50: #f3f5f7;
+  --color-light-200: #e6e9f0;
+  --color-light-300: #d8dce7;
+  --color-dark-25: #9ca6b6;
+  --color-dark-100: #5d6775;
+  --color-dark-200: #464f5c;
+  --color-neutral-white: #ffffff;
+  --color-green-25: #e9f4ed;
+  --color-green-eco: #cff3d9;
+  --color-green-whatsapp: #25d366;
+  --color-alpha-blue-200-5: #04246a0d;
+  --color-alpha-blue-300-60: #00123999;
+
+  /* space (scale 4/8) */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-72: 72px;
+
+  /* radius */
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-full: 999px;
+
+  /* border width */
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+
+  /* opacity — Figma uses 0–100, CSS uses 0–1 */
+  --opacity-50: 0.5;
+
+  /* font */
+  --font-family-body: 'Roboto Condensed', sans-serif;
+  --font-family-display: 'Antonio', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-24: 24px;
+  --font-size-25: 25px;
+  --font-size-128: 128px;
+  --font-line-height-16: 16px;
+  --font-line-height-20: 20px;
+  --font-line-height-24: 24px;
+  --font-line-height-32: 32px;
+  --font-line-height-48: 48px;
+  --font-line-height-144: 144px;
+
+  /* ================================================================ */
+  /* Semantic — collection "Semantic" (mode Light)                    */
+  /* ================================================================ */
+
+  /* text */
+  --color-text-heading: var(--color-blue-300);
+  --color-text-body: var(--color-dark-200);
+  --color-text-brand: var(--color-blue-200);
+  --color-text-secondary: var(--color-dark-100);
+  --color-text-placeholder: var(--color-dark-25);
+  --color-text-muted: var(--color-blue-greyish);
+  --color-text-disabled: var(--color-light-300);
+  --color-text-on-brand: var(--color-neutral-white);
+  --color-text-danger: var(--color-red-200);
+
+  /* background */
+  --color-bg-page: var(--color-light-50);
+  --color-bg-surface: var(--color-neutral-white);
+  --color-bg-subtle: var(--color-light-25);
+  --color-bg-muted: var(--color-blue-greyish);
+  --color-bg-neutral: var(--color-light-200);
+  --color-bg-neutral-strong: var(--color-light-300);
+  --color-bg-brand: var(--color-blue-200);
+  --color-bg-brand-strong: var(--color-blue-300);
+  --color-bg-accent: var(--color-blue-100);
+  --color-bg-info: var(--color-blue-25);
+  --color-bg-warning: var(--color-yellow-25);
+  --color-bg-warning-strong: var(--color-yellow-200);
+  --color-bg-danger: var(--color-red-200);
+  --color-bg-danger-subtle: var(--color-red-100);
+  --color-bg-danger-strong: var(--color-red-300);
+  --color-bg-text-strong: var(--color-dark-200);
+  --color-bg-eco: var(--color-green-eco);
+  --color-bg-eco-subtle: var(--color-green-25);
+  --color-bg-whatsapp: var(--color-green-whatsapp);
+  --color-bg-whatsapp-subtle: var(--color-green-25);
+  --color-bg-overlay: var(--color-alpha-blue-300-60);
+
+  /* action */
+  --color-action-primary-default: var(--color-blue-100);
+  --color-action-primary-hover: var(--color-blue-200);
+  --color-action-primary-pressed: var(--color-blue-300);
+  --color-action-danger-default: var(--color-red-100);
+  --color-action-danger-hover: var(--color-red-200);
+  --color-action-danger-pressed: var(--color-red-300);
+  --color-action-secondary-default: var(--color-neutral-white);
+  --color-action-secondary-hover: var(--color-light-50);
+  --color-action-disabled: var(--color-light-200);
+
+  /* border */
+  --color-border-subtle: var(--color-light-50);
+  --color-border-default: var(--color-light-200);
+  --color-border-strong: var(--color-light-300);
+  --color-border-muted: var(--color-blue-greyish);
+  --color-border-brand: var(--color-blue-200);
+  --color-border-brand-strong: var(--color-blue-300);
+  --color-border-accent: var(--color-blue-100);
+  --color-border-danger: var(--color-red-200);
+  --color-border-inverse: var(--color-neutral-white);
+  --color-border-focus: var(--color-blue-200);
+
+  /* icon */
+  --color-icon-primary: var(--color-blue-200);
+  --color-icon-strong: var(--color-blue-300);
+  --color-icon-muted: var(--color-blue-greyish);
+  --color-icon-accent: var(--color-red-200);
+  --color-icon-warning: var(--color-yellow-200);
+  --color-icon-disabled: var(--color-light-300);
+  --color-icon-on-brand: var(--color-neutral-white);
+  --color-icon-secondary: var(--color-dark-200);
+  --color-icon-success: var(--color-green-whatsapp);
+
+  /* shadow */
+  --color-shadow-default: var(--color-alpha-blue-200-5);
+
+  /* opacity */
+  --opacity-disabled: var(--opacity-50);
+
+  /* ================================================================ */
+  /* Effect styles                                                    */
+  /* ================================================================ */
+  --shadow-small: 0 1px 2px 0 var(--color-shadow-default);   /* Shadow/Small (0, 1) blur 2 */
+  --shadow-medium: 0 5px 5px 0 var(--color-shadow-default);  /* Shadow/Medium (0, 5) blur 5 */
+
+  /* ================================================================ */
+  /* Text styles — CSS `font` shorthands                              */
+  /* (letter-spacing is 0 in every Figma text style)                  */
+  /* ================================================================ */
+  --text-display-page-title: var(--font-weight-bold) var(--font-size-25) / var(--font-line-height-48) var(--font-family-display);
+  --text-display-banner: var(--font-weight-bold) var(--font-size-128) / var(--font-line-height-144) var(--font-family-display);
+  --text-heading-h1: var(--font-weight-bold) var(--font-size-24) / var(--font-line-height-32) var(--font-family-body);
+  --text-heading-h1-medium: var(--font-weight-medium) var(--font-size-24) / var(--font-line-height-32) var(--font-family-body);
+  --text-heading-h2: var(--font-weight-bold) var(--font-size-18) / var(--font-line-height-24) var(--font-family-body);
+  --text-heading-h3: var(--font-weight-medium) var(--font-size-18) / var(--font-line-height-24) var(--font-family-body);
+  --text-body-lg: var(--font-weight-regular) var(--font-size-18) / var(--font-line-height-24) var(--font-family-body);
+  --text-body-md: var(--font-weight-regular) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+  --text-body-md-medium: var(--font-weight-medium) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+  --text-body-md-bold: var(--font-weight-bold) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+  --text-body-sm: var(--font-weight-regular) var(--font-size-14) / var(--font-line-height-20) var(--font-family-body);
+  --text-body-sm-medium: var(--font-weight-medium) var(--font-size-14) / var(--font-line-height-20) var(--font-family-body);
+  --text-body-sm-bold: var(--font-weight-bold) var(--font-size-14) / var(--font-line-height-20) var(--font-family-body);
+  --text-caption: var(--font-weight-regular) var(--font-size-13) / var(--font-line-height-16) var(--font-family-body);
+  --text-caption-sm: var(--font-weight-regular) var(--font-size-12) / var(--font-line-height-16) var(--font-family-body);
+  --text-caption-sm-medium: var(--font-weight-medium) var(--font-size-12) / var(--font-line-height-16) var(--font-family-body);
+  --text-caption-overline: var(--font-weight-medium) var(--font-size-14) / var(--font-line-height-20) var(--font-family-body); /* + text-transform: uppercase */
+  --text-label-display: var(--font-weight-regular) var(--font-size-16) / var(--font-line-height-20) var(--font-family-display);
+  --text-label-display-sm: var(--font-weight-regular) var(--font-size-14) / var(--font-line-height-20) var(--font-family-display);
+  --text-label-display-sm-bold: var(--font-weight-bold) var(--font-size-14) / var(--font-line-height-20) var(--font-family-display);
+  --text-label-display-xs: var(--font-weight-regular) var(--font-size-11) / var(--font-line-height-16) var(--font-family-display);
+  --text-component-button: var(--font-weight-medium) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+  --text-component-form-label: var(--font-weight-medium) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+  --text-component-form-input: var(--font-weight-regular) var(--font-size-16) / var(--font-line-height-20) var(--font-family-body);
+
+  /* ================================================================ */
+  /* Component dimensions                                             */
+  /* Fixed sizes read from the Figma components (they are not Figma  */
+  /* variables). Kept here so no raw px lives in component code.      */
+  /* ================================================================ */
+  --size-icon-16: 16px;
+  --size-icon-18: 18px;
+  --size-icon-20: 20px;
+  --size-icon-24: 24px;
+  --size-icon-32: 32px;
+  --size-icon-48: 48px;
+  --size-control-md: 40px;            /* Button Medium, Form / Input, Form / Dropdown */
+  --size-radio: 16px;                 /* Form / Radio control */
+  --size-radio-dot: 8px;
+  --size-checkbox: 18px;              /* Terms checkbox */
+  --size-progress: 4px;               /* Upload / File Item progress bar */
+  --size-file-item: 56px;             /* Upload / File Item */
+  --size-dropzone: 100px;             /* Upload / Dropzone */
+  --size-textarea: 200px;             /* Form / Text Area (label + field) */
+  --size-dropdown-item: 52px;         /* Dropdown / Item */
+  --size-dropdown-menu-max: 260px;    /* Dropdown / Menu Items=5 */
+  --size-radio-card: 65px;            /* Radio Card inside Cargo Type Selector */
+  --size-eco-frame: 95px;             /* Ecofrete image frame */
+  --size-eco-image: 71px;
+  --size-eco-seal: 40px;              /* Ecofrete logo in the success modal */
+  --size-whatsapp-badge: 38px;
+  --size-whatsapp-pill: 65px;
+  --size-header: 85px;                /* Header / Desktop */
+  --size-side-menu: 72px;             /* Side Menu collapsed */
+  --size-side-menu-expanded: 270px;   /* Side Menu expanded */
+  --size-side-menu-item: 52px;
+  --size-side-menu-subitem: 33px;
+  --size-logo-icon-w: 32px;
+  --size-logo-icon-h: 35px;
+  --size-logo-full-w: 150px;
+  --size-logo-full-h: 45px;
+  --size-panel: 500px;                /* Contractor Panel body */
+  --size-panel-tab-w: 23px;           /* "»" tab */
+  --size-panel-tab-h: 32px;
+  --size-panel-arrow-w: 10px;
+  --size-panel-arrow-h: 9px;
+  --size-modal: 620px;                /* Modal / Quotation Success */
+  --size-tooltip-arrow-w: 12px;
+  --size-tooltip-arrow-h: 6px;
+  --size-hamburger-bar: 2px;          /* mobile menu button bars */
+  --size-divider-short: 12px;         /* header CNPJ | IE divider */
+  --size-content-max: 1352px;         /* IMO form width (frame 1400 − 48 right padding) */
+
+  /* z-index layers */
+  --z-header: 20;
+  --z-panel: 30;
+  --z-side-menu: 40;
+  --z-dropdown: 50;
+  --z-tooltip: 60;
+  --z-modal: 100;
+
+  /* motion */
+  --duration-fast: 150ms;
+  --duration-medium: 200ms;
+  --duration-spin: 800ms;             /* Icon / 24 / Spinner: 360° linear ~800 ms */
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+}

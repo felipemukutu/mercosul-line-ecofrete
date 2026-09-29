@@ -1,0 +1,193 @@
+.sideMenu {
+  position: fixed;
+  z-index: var(--z-side-menu);
+  inset: var(--space-0) auto var(--space-0) var(--space-0);
+  width: var(--size-side-menu);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-surface);
+  overflow: hidden;
+  transition:
+    width var(--duration-medium) var(--easing-standard),
+    box-shadow var(--duration-medium) var(--easing-standard);
+}
+
+/* State=Expanded — overlays the content (fixed), does not push it */
+.expanded {
+  width: var(--size-side-menu-expanded);
+  box-shadow: var(--shadow-medium);
+}
+
+.logo {
+  position: relative;
+  flex-shrink: 0;
+  height: var(--size-header);
+  border-bottom: var(--border-width-1) solid var(--color-border-default);
+}
+.logoIcon,
+.logoFull {
+  position: absolute;
+  left: var(--space-20);
+  top: var(--space-20);
+  transition: opacity var(--duration-fast) var(--easing-standard);
+}
+.logoIcon {
+  width: var(--size-logo-icon-w);
+  height: var(--size-logo-icon-h);
+}
+.logoFull {
+  width: var(--size-logo-full-w);
+  height: var(--size-logo-full-h);
+  opacity: 0;
+}
+.expanded .logoIcon {
+  opacity: 0;
+}
+.expanded .logoFull {
+  opacity: 1;
+}
+
+.menu {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--size-side-menu-expanded);
+  padding-bottom: var(--space-12);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--border-width-1);
+}
+
+.group {
+  padding-block: var(--space-12);
+  border-bottom: var(--border-width-1) solid var(--color-border-default);
+}
+.group > ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--border-width-1);
+}
+
+.section {
+  padding-block: var(--space-0);
+}
+
+/* Active section (Sustentabilidade) when expanded */
+.activeSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-0) var(--space-16);
+  background: var(--color-bg-subtle);
+  box-shadow: inset calc(var(--border-width-2) * -1) 0 0 var(--color-border-danger);
+}
+
+.divider {
+  height: var(--space-20);
+}
+
+/* Side Menu Item — Style=Default */
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  width: var(--size-side-menu-expanded);
+  height: var(--size-side-menu-item);
+  padding: var(--space-12) var(--space-20);
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+.item:hover {
+  background: var(--color-bg-page);
+}
+.item:focus-visible,
+.subitem:focus-visible {
+  outline-offset: calc(var(--border-width-2) * -1);
+}
+
+.itemLabel,
+.itemChevron {
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--easing-standard);
+}
+.expanded .itemLabel,
+.expanded .itemChevron {
+  opacity: 1;
+}
+
+.itemLabel {
+  padding-bottom: var(--space-4);
+  font: var(--text-label-display);
+  color: var(--color-text-brand);
+  white-space: nowrap;
+}
+
+.itemChevron {
+  position: absolute;
+  right: var(--space-20);
+  top: 50%;
+  margin-top: calc(var(--size-icon-16) / -2);
+}
+
+.itemActive:hover {
+  background: transparent;
+}
+
+/* Side Menu Item — Style=Subitem */
+.subitems {
+  display: flex;
+  flex-direction: column;
+}
+
+.subitem {
+  display: flex;
+  align-items: flex-end;
+  width: var(--size-side-menu-expanded);
+  min-height: var(--size-side-menu-subitem);
+  padding: var(--space-4) var(--space-20) var(--space-4) var(--space-72);
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+.subitem:hover {
+  background: var(--color-bg-neutral);
+}
+
+.subitemLabel {
+  padding-bottom: var(--space-4);
+  font: var(--text-label-display-sm);
+  color: var(--color-text-brand);
+  white-space: nowrap;
+}
+
+.backdrop {
+  display: none;
+}
+
+/* ---- < 768: Side Menu becomes a drawer opened from the header ---- */
+@media (--bp-mobile) {
+  .sideMenu {
+    width: var(--size-side-menu-expanded);
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition:
+      transform var(--duration-medium) var(--easing-standard),
+      visibility var(--duration-medium);
+  }
+  .drawerOpen {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: var(--shadow-medium);
+  }
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-side-menu);
+    background: var(--color-bg-overlay);
+  }
+}

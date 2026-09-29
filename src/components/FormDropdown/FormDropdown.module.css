@@ -1,0 +1,95 @@
+.anchor {
+  position: relative;
+}
+
+.box {
+  width: 100%;
+  justify-content: space-between;
+  padding-left: var(--space-16);
+  padding-right: var(--space-12);
+  text-align: left;
+  cursor: pointer;
+}
+.box:focus-visible {
+  outline: none;
+}
+
+.placeholder {
+  color: var(--color-text-placeholder);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.value {
+  color: var(--color-text-body);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.box:focus-within .value {
+  color: var(--color-text-brand);
+}
+
+/* State=Open */
+.open .box {
+  border-color: var(--color-border-brand);
+  border-top-width: var(--border-width-1);
+  box-shadow: none;
+}
+.open .box .value {
+  color: var(--color-text-body);
+}
+
+/* State=Error keeps Shadow/Small */
+.invalid .box {
+  box-shadow: var(--shadow-small);
+}
+
+/* State=Disabled — whole component at opacity/disabled */
+.disabled {
+  opacity: var(--opacity-disabled);
+}
+.disabled .box {
+  background: var(--color-bg-page);
+  border-color: var(--color-border-default);
+  cursor: not-allowed;
+}
+.disabled .box:hover {
+  box-shadow: var(--shadow-small);
+}
+
+/* Dropdown / Menu */
+.menu {
+  position: absolute;
+  z-index: var(--z-dropdown);
+  top: calc(100% + var(--space-8));
+  left: var(--space-0);
+  right: var(--space-0);
+  max-height: var(--size-dropdown-menu-max);
+  overflow-y: auto;
+  background: var(--color-bg-surface);
+  border-top: var(--border-width-1) solid var(--color-border-default);
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-medium);
+  outline: none;
+}
+
+/* Dropdown / Item */
+.item {
+  display: flex;
+  align-items: center;
+  min-height: var(--size-dropdown-item);
+  padding: var(--space-16) var(--space-20);
+  background: var(--color-bg-surface);
+  border-bottom: var(--border-width-1) solid var(--color-border-subtle);
+  font: var(--text-body-md);
+  color: var(--color-text-body);
+  cursor: pointer;
+}
+.itemActive {
+  background: var(--color-bg-page);
+}
+.itemSelected {
+  color: var(--color-text-brand);
+  font: var(--text-body-md-medium);
+}
